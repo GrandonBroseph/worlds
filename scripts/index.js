@@ -36,7 +36,6 @@
     shuffle(list);
 
     list.some(function(world) {
-      console.log(world);
       add(world);
     });
 
@@ -723,7 +722,7 @@ module.exports = (function() {
       this.reset(pos);
       this.color = (data && data.color ? data.color : null) || this.color || "#427";
       this.element.style.backgroundColor = this.color;
-      this.element.style.backgroundImage = "url(../images/"+this.id+".gif)";
+      this.element.style.backgroundImage = "url(images/"+this.id+".gif)";
       this.element.style.width = size+"em";
       this.element.style.height = size+"em";
       document.querySelector(".app").appendChild(this.element);
