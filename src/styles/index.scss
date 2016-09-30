@@ -1,0 +1,77 @@
+$resolution-width: 640;
+$resolution-height: 480;
+
+$ratio-width: 4;
+$ratio-height: 3;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html, body, .wrapper {
+  height: 100%;
+}
+
+body {
+  background: black;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  font-size: #{100 / $resolution-width}vw;
+  overflow: hidden;
+  background: linear-gradient(#101, #214);
+  &::after { // Padding hack
+    content: "";
+    display: block;
+    padding: 0 0 (($ratio-height / $ratio-width) * 100%) 0;
+  }
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 4em 16em rgba(0, 0, 0, .25);
+    background-position: center;
+    background-size: cover;
+    &.mercury {
+      background-image: url(../images/mercury.gif);
+    }
+    &.venus {
+      background-image: url(../images/venus.gif);
+    }
+    &.earth {
+      background-image: url(../images/earth.gif);
+    }
+    &.moon {
+      background-image: url(../images/moon.gif);
+    }
+    &.mars {
+      background-image: url(../images/mars.gif);
+    }
+  }
+}
+
+@media screen and (min-aspect-ratio: #{$ratio-width} / #{$ratio-height} ) {
+  .app {
+    width: 100vh;
+    font-size: #{100 / $resolution-width}vh;
+    transform: scale(#{ ($ratio-width / $ratio-height) });
+  }
+}
