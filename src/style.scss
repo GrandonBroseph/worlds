@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: black;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: black;
+  font-size: 1px;
+  border: thin solid #111;
+}
+
+.world {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.world.earth {
+  background-image: url(img/earth.gif)
+}
+
+.world.moon {
+  background-image: url(img/moon.gif)
+}
+
+.world.mars {
+  background-image: url(img/mars.gif)
+}
